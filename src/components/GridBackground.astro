@@ -1,0 +1,32 @@
+---
+const gridSize = 50; // Ajusta este valor para cambiar el número de cuadrados
+---
+
+<div class="grid-background">
+	{Array(gridSize * gridSize).fill(0).map((_, i) => (
+		<div class="grid-square" key={i}></div>
+	))}
+</div>
+
+<style>
+	.grid-background {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 20px);
+		grid-auto-rows: 20px;
+		gap: 1px;
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+		background-color: #f0f0f0;
+	}
+
+	.grid-square {
+		background-color: #3498db;
+		transition: background-color 0.3s ease;
+	}
+
+	.grid-square:hover {
+		background-color: white;
+	}
+</style>
+
